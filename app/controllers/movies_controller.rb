@@ -10,11 +10,10 @@ class MoviesController < ApplicationController
     @movies = Movie.all
     @all_ratings = Movie.get_ratings
     @sorting = params[:sorting]
+    @chosen_ratings = @all_ratings
       
     if params[:ratings]
       @chosen_ratings = params[:ratings].keys
-    else
-      @chosen_ratings = @all_ratings
     end
       
     session[:sorting] = params[:sorting] if @sorting
