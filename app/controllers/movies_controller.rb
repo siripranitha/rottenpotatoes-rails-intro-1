@@ -19,7 +19,7 @@ class MoviesController < ApplicationController
     session[:sorting] = params[:sorting] if @sorting
       
       
-    if params[:ratings] || params[:commit] == 'Refresh'
+    if params[:ratings] && params[:commit] == 'Refresh'
       session[:ratings] = params[:ratings]
     end
       
